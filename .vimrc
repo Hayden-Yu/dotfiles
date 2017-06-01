@@ -2,6 +2,9 @@
 set background=dark
 colorscheme solarized
 let g:solarized_termtrans=1
+if !has('gui_running')
+  let g:solarized_termcolors=256
+endif
 
 " Make Vim more useful
 set nocompatible
@@ -49,8 +52,8 @@ set cursorline
 " Make tabs as wide as two spaces
 set tabstop=2
 " Show “invisible” characters
-set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
-set list
+" set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+" set list
 " Highlight searches
 set hlsearch
 " Ignore case of searches
@@ -104,3 +107,55 @@ if has("autocmd")
 	" Treat .md files as Markdown
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
+
+au FileType html setl sw=2 sts=2 et
+au FileType css setl sw=2 sts=2 et
+
+let g:sexp_enable_insert_mode_mappings = 0"
+
+
+
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'scrooloose/nerdtree'
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+map <C-n> :NERDTreeToggle<CR>
+map <Leader>n :NERDTree %:p:h<CR>
+
+Plugin 'godlygeek/tabular'
+
+Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'jiangmiao/auto-pairs'
+
+Plugin 'vim-ruby/vim-ruby'
+
+Plugin 'cakebaker/scss-syntax.vim'
+
+Plugin 'chrisbra/Colorizer'
+
+:let g:colorizer_auto_color = 1
+:let g:colorizer_auto_filetype='less,sass,scss,js,css,html'
+let g:colorizer_syntax = 1
+
+Plugin 'Chiel92/vim-autoformat'
+noremap <F3> :Autoformat<CR><CR>
+
+Plugin 'vim-scripts/DeleteTrailingWhitespace'
+
+Plugin 'sheerun/vim-polyglot'
+
+Plugin 'kien/ctrlp.vim'
+
+Plugin 'chase/vim-ansible-yaml'
+
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-projectionist'
+Plug 'noahfrederick/vim-composer'
+Plug 'noahfrederick/vim-laravel'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
