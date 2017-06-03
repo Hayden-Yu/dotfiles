@@ -76,10 +76,10 @@ let g:ctrlp_map = '<c-p>'
 " ansible yaml support
 Plugin 'chase/vim-ansible-yaml'
 
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-projectionist'
-Plug 'noahfrederick/vim-composer'
-Plug 'noahfrederick/vim-laravel'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-projectionist'
+Plugin 'noahfrederick/vim-composer'
+Plugin 'noahfrederick/vim-laravel'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
