@@ -36,6 +36,7 @@ Plugin 'godlygeek/tabular'
 
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_show_diagnostics_ui = 0
+let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
 
 Plugin 'jiangmiao/auto-pairs'
 
@@ -76,10 +77,6 @@ let g:ctrlp_map = '<c-p>'
 " ansible yaml support
 Plugin 'chase/vim-ansible-yaml'
 
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-projectionist'
-Plugin 'noahfrederick/vim-composer'
-Plugin 'noahfrederick/vim-laravel'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
